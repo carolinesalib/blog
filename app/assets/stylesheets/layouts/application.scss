@@ -46,3 +46,13 @@ body {
     line-height: 1.1;
 	}
 }
+
+@media (max-width: 759px) {
+	.header-inner {
+		width: 100%;
+	}
+
+	.content {
+		padding: 0 10px; 
+	}
+}
