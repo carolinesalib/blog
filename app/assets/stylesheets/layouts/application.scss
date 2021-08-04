@@ -15,7 +15,6 @@
 	text-decoration: none;
 	color: #fff;
 	text-transform: uppercase;
-	font-family: Ubuntu, sans-serif;
 	font-weight: 500;
 	font-size: 18px;
 }
@@ -28,7 +27,21 @@
 	text-decoration: none;
 	color: #fff;
 	margin-left: 20px;
-	font-family: Ubuntu, sans-serif;
 	font-size: 16px;
 }
 
+.content {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+body {
+	font-family: Ubuntu, sans-serif;
+
+	h1 {
+		color: #e74c3c;
+    text-shadow: 1px 1px 1px rgb(150, 150, 150);
+		font-weight: 500;
+    line-height: 1.1;
+	}
+}
