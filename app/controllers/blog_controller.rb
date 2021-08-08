@@ -1,5 +1,3 @@
-require 'redcarpet'
-
 class BlogController < ApplicationController
   before_action :set_site_prefix
 
@@ -10,15 +8,17 @@ class BlogController < ApplicationController
     if params[:tag].present?
       @articles = @articles.filter { |article| article.tags.include?(params[:tag]) }
     end
+    # TODO: Click on article to open
+    # TODO: Click on tag to filter
   end
 
   def show
     # TODO: deal with possible errors
-    # TODO: highlight code
     # TODO: Allow to add images (see how I did that with jykill)
+    # TODO: Title style
     # TODO: Test mobile
     article_content = File.open("app/articles/#{params[:id]}.md").read
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown = Redcarpet::Markdown.new(ArticleHTMLRender, fenced_code_blocks: true)
 
     @article_content_html = markdown.render(article_content)
   end
