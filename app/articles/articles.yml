@@ -1,0 +1,11 @@
+articles:
+  0:
+    title: First article test
+    date: 2021-08-07
+    description: Testing a list of articles
+    tags: test, banana
+  1:
+    title: First article test 2
+    date: 2021-08-07
+    description: Testing a list of articles
+    tags: test, apple
