@@ -27,11 +27,11 @@ class BlogController < ApplicationController
     end
     # TODO: Click on article to open
     # TODO: Click on tag to filter
+    # TODO: Date style
   end
 
   def show
     # TODO: deal with possible errors
-    # TODO: Title style
     # TODO: Test mobile
     # TODO: slug
     article_content = File.open("app/articles/#{params[:id]}.md").read
