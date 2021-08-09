@@ -5,12 +5,13 @@ require_dependency 'rouge/plugins/redcarpet'
 # TODO: move this to a better place
 class ArticleHTMLRender < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
+  include ActionView::Helpers::AssetTagHelper
 
   def image(link, title, alt_text)
     if title =~ /=(\d+)x(\d+)/
-      %(<img src="#{link}" alt="#{alt_text}" class="markdown-image" style="max-width: #{$1}px; max-height:#{$2}px">)
+      %(<img src="#{ActionController::Base.helpers.asset_path(link)}" alt="#{alt_text}" class="markdown-image" style="max-width: #{$1}px; max-height:#{$2}px">)
     else
-      %(<img src="#{link}" alt="#{alt_text}" class="markdown-image">)
+      %(<img src="#{ActionController::Base.helpers.asset_path(link)}" alt="#{alt_text}" class="markdown-image">)
     end
   end
 end
