@@ -1,3 +1,15 @@
+require 'redcarpet'
+require 'rouge'
+require_dependency 'rouge/plugins/redcarpet'
+
+class ArticleHTMLRender < Redcarpet::Render::HTML
+  include Rouge::Plugins::Redcarpet
+
+  def block_quote(quote)
+    %(<blockquote class="my-custom-class">#{quote}</blockquote>)
+  end
+end
+
 class BlogController < ApplicationController
   before_action :set_site_prefix
 
