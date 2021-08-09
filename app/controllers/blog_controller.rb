@@ -2,11 +2,16 @@ require 'redcarpet'
 require 'rouge'
 require_dependency 'rouge/plugins/redcarpet'
 
+# TODO: move this to a better place
 class ArticleHTMLRender < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
 
-  def block_quote(quote)
-    %(<blockquote class="my-custom-class">#{quote}</blockquote>)
+  def image(link, title, alt_text)
+    if title =~ /=(\d+)x(\d+)/
+      %(<img src="#{link}" alt="#{alt_text}" class="markdown-image" style="max-width: #{$1}px; max-height:#{$2}px">)
+    else
+      %(<img src="#{link}" alt="#{alt_text}" class="markdown-image">)
+    end
   end
 end
 
@@ -26,9 +31,9 @@ class BlogController < ApplicationController
 
   def show
     # TODO: deal with possible errors
-    # TODO: Allow to add images (see how I did that with jykill)
     # TODO: Title style
     # TODO: Test mobile
+    # TODO: slug
     article_content = File.open("app/articles/#{params[:id]}.md").read
     markdown = Redcarpet::Markdown.new(ArticleHTMLRender, fenced_code_blocks: true)
 
