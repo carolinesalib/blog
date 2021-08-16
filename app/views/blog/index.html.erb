@@ -2,7 +2,7 @@
   <a href="<%= blog_post_path(article.id) %>" style="text-decoration: none">
     <h1><%= article.title %></h1>
     <p><%= article.description %></p>
-    <p><%= article.date %></p>
+    <p><%= stringfy_date(article.date) %></p>
   </a>
   <p><%= article.tags %></p>
 <% end %>
