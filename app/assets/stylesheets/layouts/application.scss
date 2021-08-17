@@ -45,6 +45,12 @@ body {
 		font-weight: 500;
     line-height: 1.1;
 	}
+
+	a {
+		color: #428bca;
+    text-decoration: none;
+		margin-right: 4px;
+	}
 }
 
 @media (max-width: 759px) {

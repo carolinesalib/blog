@@ -26,7 +26,6 @@ class BlogController < ApplicationController
     if params[:tag].present?
       @articles = @articles.filter { |article| article.tags.include?(params[:tag]) }
     end
-    # TODO: Click on tag to filter
   end
 
   def show

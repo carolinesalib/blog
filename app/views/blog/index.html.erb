@@ -4,5 +4,7 @@
     <p><%= article.description %></p>
     <p><%= stringfy_date(article.date) %></p>
   </a>
-  <p><%= article.tags %></p>
+  <% article.tags.each do |tag| %>
+    <a class"tag" href=<%= "#{blog_path}?tag=#{tag}" %>><%= tag %></a>
+  <% end %>
 <% end %>
