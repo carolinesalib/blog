@@ -1,5 +1,5 @@
 <% @articles.each do |article| %>
-  <a href="<%= blog_post_path(article.id) %>" style="text-decoration: none">
+  <a href=<%= blog_post_path("#{article.id}-#{article.title.parameterize}") %> style="text-decoration: none">
     <h1><%= article.title %></h1>
     <p><%= article.description %></p>
     <p><%= stringfy_date(article.date) %></p>

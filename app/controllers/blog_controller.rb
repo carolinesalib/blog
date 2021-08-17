@@ -29,10 +29,7 @@ class BlogController < ApplicationController
   end
 
   def show
-    # TODO: deal with possible errors
-    # TODO: Test mobile
-    # TODO: slug
-    article_content = File.open("app/articles/#{params[:id]}.md").read
+    article_content = File.open("app/articles/#{params[:id].to_i}.md").read
     markdown = Redcarpet::Markdown.new(ArticleHTMLRender, fenced_code_blocks: true)
 
     @article_content_html = markdown.render(article_content)
