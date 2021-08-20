@@ -32,6 +32,8 @@ class BlogController < ApplicationController
     else
       @articles = @articles.filter { |article| !article.in_progress }
     end
+
+    @articles = @articles.sort_by(&:id).reverse!
   end
 
   def show
