@@ -5,6 +5,8 @@ After using jekyll for some time, I decided to create my own blog from scratch s
 
 First I thought this should be a private project, but maybe there are other people out there that wants to do the same and need some inspiration, so now this project is open source.
 
+Here is the URL of my blog in production if you want to take a look: http://carolinesalib.com
+
 ## Tech
 * Ruby version: 3.0.0
 * Rails version: 6.1.3
