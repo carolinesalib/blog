@@ -26,6 +26,12 @@ class BlogController < ApplicationController
     if params[:tag].present?
       @articles = @articles.filter { |article| article.tags.include?(params[:tag]) }
     end
+
+    if params[:in_progress] == "true"
+      @articles = @articles.filter { |article| article.in_progress }
+    else
+      @articles = @articles.filter { |article| !article.in_progress }
+    end
   end
 
   def show
