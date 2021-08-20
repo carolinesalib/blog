@@ -1,11 +1,6 @@
 articles:
-  #  0:
-  #    title: First article test
-  #    date: 2021-08-07
-  #    description: Testing a list of articles
-  #    tags: test, banana
   1:
     title: How to debug ruby tasks on Rubymine
-    date: 2021-08-07
+    date: 2019-06-11
     description: Instructions on how to debug tasks on Rubymine
     tags: rubymine, ruby, rails, tasks, tips, debug
