@@ -5,7 +5,7 @@ articles:
     description: Instructions on how to debug tasks on Rubymine
     tags: rubymine, ruby, rails, tasks, tips, debug
   2:
-    title: First day with RSpec
+    title: First day using RSpec
     date: 2021-08-22
     description: It's your first day using RSpec. Whether you have experience with unit tests or not, this article will cover the basics, so you don't feel completely lost when using this fantastic tool for the first time
     tags: ruby, rspec, test
