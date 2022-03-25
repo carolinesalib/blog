@@ -41,3 +41,4 @@ yarn-debug.log*
 /.idea/
 tags
 tags
+.DS_Store
