@@ -15,6 +15,7 @@ Here is the URL of my blog in production if you want to take a look: http://caro
 It should be as simple as:
 ```shell
 bundle install
+rails webpacker:install
 rails server
 ```
 
