@@ -2,10 +2,10 @@ class BlogController < ApplicationController
   before_action :set_site_prefix
 
   def index
-    @articles = SimpleBlog.list_articles(params[:tag], params[:in_progress])
+    @posts = SimpleBlog.list_posts(params[:tag], params[:in_progress])
   end
 
   def show
-    @article_content_html = SimpleBlog.render_article(params[:id])
+    @post_content_html = SimpleBlog.render_post(params[:id])
   end
 end
