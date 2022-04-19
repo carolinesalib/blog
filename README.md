@@ -26,17 +26,17 @@ Simple page with some information about the writter.
 
 ### Blog page
 
-**Storing and editing articles**
+**Storing and editing posts**
 
-With the intent of making it as simple as possible, I decided to not use a database for now. Instead, I'm saving the articles on markdown files under `articles` folder. This way I can easily edit my markdowns without needing a whole admin area where I can edit and preview my articles.
+With the intent of making it as simple as possible, I decided to not use a database for now. Instead, I'm saving the posts on markdown files under `posts` folder. This way I can easily edit my markdowns without needing a whole admin area where I can edit and preview my posts.
 
-The `Article` model (not an active record model) is responsible for converting the `article.yml` structure into a list of articles to be displayed at `/blog/posts` URL.
+The `post` model (not an active record model) is responsible for converting the `post.yml` structure into a list of posts to be displayed at `/blog/posts` URL.
 
 I'm using the `redcarpet` gem to parse the markdown files and `rouge` gem for code highlight.
 
 **Filters**
 
-In the `/blog/posts` URL, we can search for tags (ex: `/blog/posts?tag=ruby`) or for articles in progress (ex: `/blog/posts?in_progress=true`). Articles in progress are hidden in the main list unless we use the `in_progress` param in the URL.
+In the `/blog/posts` URL, we can search for tags (ex: `/blog/posts?tag=ruby`) or for posts in progress (ex: `/blog/posts?in_progress=true`). posts in progress are hidden in the main list unless we use the `in_progress` param in the URL.
 
 **Slug**
 
@@ -45,13 +45,13 @@ Slugs are really simple in this application.
 * URL without slug: http://localhost:3000/blog/posts/1
 * URL with slug: http://localhost:3002/blog/posts/1-how-to-debug-ruby-tasks-on-rubymine
 
-The articles are saved with a numeric identification (ex: `1.md, 2.md`) in the `articles` folder. The easiest way to implement a slug is to parameterize the title of the article, ex:
+The posts are saved with a numeric identification (ex: `1.md, 2.md`) in the `posts` folder. The easiest way to implement a slug is to parameterize the title of the post, ex:
 ```ruby
-  blog_post_path("#{article.id}-#{article.title.parameterize}")
+  blog_post_path("#{post.id}-#{post.title.parameterize}")
 ```
 On the `blog_controller.rb` file I just need to convert the `id` param to `int` in order to get the id.
 ```ruby
-File.open("app/articles/#{params[:id].to_i}.md")
+File.open("app/posts/#{params[:id].to_i}.md")
 ```
 
 ### Contribution
