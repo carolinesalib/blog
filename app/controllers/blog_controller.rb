@@ -1,4 +1,6 @@
 class BlogController < ApplicationController
+  include SimpleBlogHelper
+
   before_action :set_site_prefix
 
   def index
