@@ -9,3 +9,9 @@ posts:
     date: 2021-08-22
     description: It's your first day using RSpec. Whether you have experience with unit tests or not, this post will cover the basics, so you don't feel completely lost when using this fantastic tool for the first time
     tags: ruby, rspec, test
+  3:
+    title: 2023 review
+    date: 2023-12-31
+    description: Just trying something new and journaling about how 2023 was to me
+    tags: reflection, journaling
+    # in_progress: true
