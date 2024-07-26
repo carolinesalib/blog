@@ -14,4 +14,9 @@ posts:
     date: 2023-12-31
     description: Just trying something new and journaling about how 2023 was to me
     tags: reflection, journaling
-    # in_progress: true
+  4:
+    title: How to configure metrics for rails project using prometheus and grafana
+    date: 2027-07-26
+    description: Instructions on how to configure metrics for a rails project using popular OpenTelemetry open source tools such as prometheus and grafana
+    tags: rails, observability, opentelemetry, prometheus, grafana, prometheus_exporter, tutorial
+    in_progress: true
