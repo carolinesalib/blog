@@ -19,6 +19,46 @@ rails webpacker:install
 rails server
 ```
 
+## Docker Setup
+You can also run this project using Docker for development:
+
+### Prerequisites
+- Docker installed on your machine
+
+### Building and Running with Docker
+
+1. Build the Docker image:
+```shell
+docker build -t blog .
+```
+
+2. Run the container:
+```shell
+# Run with your local code mounted as a volume for development
+docker run -p 3000:3000 -v $(pwd):/app blog
+```
+
+The application will be available at http://localhost:3000
+
+### Deploy
+To build the image
+
+```shell
+docker build -t blog .
+docker stop blog && docker rm blog
+docker run -d -p 3010:3000 --name blog blog
+```
+
+Then run `kamal setup` and `kamal deploy`
+
+### Development Tips
+- The container is configured for development use
+- Local code changes will be reflected immediately due to the volume mount
+- You can run Rails commands inside the container using:
+```shell
+docker exec -it CONTAINER_ID rails console
+```
+
 ## How it works
 
 ### About page

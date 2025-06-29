@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get "about", to: "home#index"
   get "coach", to: "coach#index"
 
+  get "/up", to: proc { [200, {}, ["OK"]] }
+
   root "home#index"
 end
