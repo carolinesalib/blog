@@ -1,0 +1,6 @@
+healthcheck:
+  path: /up
+  port: 3000
+  max_attempts: 5
+  interval: 5s
+  timeout: 3s

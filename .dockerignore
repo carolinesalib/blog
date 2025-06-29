@@ -1,0 +1,16 @@
+.git
+.gitignore
+.env
+.env.*
+log/*
+tmp/*
+node_modules
+coverage/
+.bundle
+.dockerignore
+Dockerfile
+README.md
+docker-compose.yml
+public/assets
+public/packs
+public/packs-test

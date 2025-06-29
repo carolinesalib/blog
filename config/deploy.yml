@@ -1,0 +1,28 @@
+service: blog
+image: carolinesalibdockerhub/blog
+
+servers:
+  web:
+    - 70.77.126.0
+
+ssh:
+  user: pataserver
+
+proxy:
+  ssl: true
+  host: blog.carolinesalib.com
+  app_port: 3000
+
+registry:
+  username: carolinesalibdockerhub
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+
+env:
+  clear:
+    RAILS_ENV: production
+  secret:
+    - RAILS_MASTER_KEY
