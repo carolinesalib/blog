@@ -10,4 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping carolinesalib.com
-        run: curl -f https://carolinesalib.com/up
+        run: |
+          echo "Starting health check at $(date)"
+          if curl -f -s -o /dev/null -w "%{http_code}" https://carolinesalib.com/up; then
+            echo "✅ Health check passed - site is responding"
+          else
+            echo "❌ Health check failed - site is not responding"
+            exit 1
+          fi
+
+      - name: Log success
+        if: success()
+        run: echo "Health check completed successfully at $(date)"
+
+      - name: Log failure
+        if: failure()
+        run: echo "Health check failed at $(date)"
